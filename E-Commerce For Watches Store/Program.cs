@@ -1,4 +1,5 @@
 using E_Commerce_For_Watches_Store.Context;
+using E_Commerce_For_Watches_Store.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace E_Commerce_For_Watches_Store
@@ -36,6 +37,7 @@ namespace E_Commerce_For_Watches_Store
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+            AppDbInital.Seed(app);
 
             app.Run();
         }
